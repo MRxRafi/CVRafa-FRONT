@@ -1,0 +1,11 @@
+
+.bottom-container {
+    font-size: 0.8rem;
+    background-color: #66BFBF;
+    color: #EAF6F6;
+    padding: 30px 0;
+}
+
+.bottom-container p {
+    margin-top: 30px;
+}
