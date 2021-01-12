@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-ui-d5b1f": {
+      "hosting": {
+        "cvrafa": [
+          "fir-ui-d5b1f"
+        ]
+      }
+    }
+  }
+}
