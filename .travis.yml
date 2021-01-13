@@ -1,0 +1,16 @@
+languaje: node_js
+node_js:
+  - "14"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+    - master
+
+before script:
+  - npm install -g @angular/cli
+
+script:
+  - ng lint
+  - ng build --prod --base-href https://mrxrafi.github.io/cvrafa-front/
