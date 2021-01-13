@@ -22,10 +22,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('cvrafa');
   });
 
-  it('should render title', () => {
+  it('should have main section', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('cvrafa app is running!');
+    expect(compiled.querySelector('main')).not.toBeUndefined();
   });
 });

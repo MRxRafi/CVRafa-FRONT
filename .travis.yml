@@ -13,4 +13,5 @@ before script:
 
 script:
   - ng lint
+  - npm run test-headless
   - ng build --prod --base-href https://mrxrafi.github.io/cvrafa-front/
