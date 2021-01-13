@@ -1,4 +1,6 @@
-# Cvrafa
+# CVRafa-Front  
+
+[![Build Status](https://travis-ci.com/MRxRafi/CVRafa.svg?branch=master)](https://travis-ci.com/MRxRafi/CVRafa)  
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
