@@ -20,6 +20,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/cvrafa
+  local_dir: dist/cvrafa-front
   on:
     branch: master
