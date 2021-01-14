@@ -1,25 +1,18 @@
 languaje: node_js
 node_js:
-  - "14"
+- '14'
 dist: trusty
 sudo: required
-
 branches:
   only:
-    - master
-
+  - master
 before script:
-  - npm install -g @angular/cli
-
+- npm install -g @angular/cli
 script:
-  - ng lint
-  - npm run test-headless
-  - ng build --prod --base-href https://MRxRafi.github.io/CVRafa-FRONT/
-
+- ng lint
+- npm run test-headless
+- ng build --prod --base-href https://MRxRafi.github.io/CVRafa-FRONT/
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/cvrafa-front
-  on:
-    branch: master
+  provider: firebase
+  token:
+    secure: GvDtD6n7S0sS+fsSRQnYapOzV5PDCPHO2cBzIiJO/XcBanRuZYxOw9msLwcdobDCoBWclwK87Jfoc6R9qzyuenilQpEqP5joUuAD5Jgahj/S7Ev1WMsFboZSSaWVKzYpmPy+iWH5JsPX+2YwFgT1ajBk5MX7PSWABx+MMwIGuaflgwjVoA6SarVE/cBM4V2dt9FUv9UVPkx8W/z+Q/rfMMfyEPPJzeMRhn883G8KYt+B0TPTsyWcmOltzE2kpoqJLPphnn27ergIFf/dx/EVy3Whd7skFS85AlEnP4nwluJoYplp255oCtKUwDI7EfOISPGqw6u7CpjO1xH3mzKqWh3IO7ZntmYhfS1Wvvk59X4Pyvp36uWe4ABwSZxCLdNQn7WH91B1OgGQpUPwIiX/rP/rZTm+0rhUL3tDrUsYtqHOw4UfBdAUyMkUvfxIai1F5lFxGsUOP3e2kPnqvSVUEBlIiuXiN7B18wl41UAVEe3GMs588i+G8cWYAYHqdFtsSWBd5HbTeLPjg7Ot85HDSvNasQJ6nMNGBM2MVbeycMplgIObhSjfnDTrwVFoHgkz222XINW3w625vHRnwfT6tYDuWAMqZxO0OSrr8ZvY/9mAXueasXPajRXCreUh7mR287N3E4aZDJU1WQDdP0gmsu//ELpuitZrr5SUg2y8U8g=
