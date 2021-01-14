@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/cvrafa-front",
+    "public": "/",
     "ignore": [
       "firebase.json",
       "**/.*",
