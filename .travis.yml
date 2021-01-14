@@ -2,7 +2,7 @@ os: linux
 language: node_js
 node_js:
 - '14'
-dist: trusty
+dist: xenial
 branches:
   only:
   - master
@@ -23,5 +23,4 @@ deploy:
   token: "$FIREBASE_TOKEN"
 notifications:
   email: false
-  slack:
-    secure: cm+vnxwpdeQ6QJ5Q8QCTxebvT1rBetcFGt+fuHCF8FrwSM49ItsoPPTBySyM8jxZjngaCGevTKPq+l3aPPv/+3ME3uLDPdhK/pAh2FG4a5vssntdmUm9+SDMqRgdaifhr23i7NVzH+QKtkPplUds78/EA43gO974NZ11vAdGi+y1SNZDyHvN1A06gJ9ps0KDjp1gX/p8tWMgadfxPBnfbevfMHgXyrhVY4LgI2svNUClbfOjPgImqNYkCQITx2gaTKo2Nr1bA1tLRdXUFIZaFQF+xwLuS7ivbrjBnc5xHBynTYITtYDv9uW8q4oLFOfjAplf1tsGQVtkym0OlZIVJlMwelPiEZN71SVOajL3CD0sHc9zwmtjBXbFBSm+l61SVF7mIjVsE3eAwb/ZpVYaQBLfehIndSqrLj/GaD5Dxt4Zv60n4VlkgX0f0im1Y1lNTQcVFG+SZdD7WohBmLP+PqQrTXekl7IxzBzpeYCuNHWfxBsN297NX+mwIdlui/kQ6slBmaTlXkcjsczCbi3enMLFnTwKBmiyP+IBL9RLKjry52dR4Mb8wdahBIIL+i69IZyOfgKlLZJBusSrXQQaFWECGkgTkvPYuavoCTAYWL56H3LgMJLEUtbNPLxZkyqXSiI3f6FDt22ejKGanqiUlJ/Ycc/39EC92lvBiy5e1Mk=
+  slack: "$SLACK"
