@@ -6,21 +6,8 @@ dist: xenial
 branches:
   only:
   - master
-addons:
-  sonarcloud:
-    organization: mrxrafi
-    token: "$SONAR"
-before_script:
-- npm install -g @angular/cli
-script:
-- ng lint
-- npm run test-headless
-- sonar-scanner
-- ng build --prod
-deploy:
-  skip_cleanup: true
-  provider: firebase
-  token: "$FIREBASE_TOKEN"
+
 notifications:
   email: false
-  slack: "$SLACK"
+  slack:
+    secure: cf7TimX7AC+hZ91xph2B8mIRW/GvbO2SxwDLP7zVYxsoIre1nGrX3rBJelny0syfySEf9GKuj8oHlgK0lBbM3L3/unh9Qi0+m/9cYJH0uKIToiq5dGkXQcTd4eDbJGBeIBGGV0M0xNbXJZJz/sHO/P5M4yqSHPwpebdoZYZeOO0BvgmJHFE4NuYO7VNqqUeFbL1p/FklRk4F4U/GjAYTfnt0/1/dJiApDrxpFsuuuBdlaXIqjBkUTKW2RBnUii7XkEm6Mbr7hlzsZNSUN/V0xf0goVyQ/Hc9vZwSWS0bzLO8sxYHr1hmSGAhz1GfdPZw2mrZFvcJcl95LEJ32oBEKsIbpF4d0ICtSUDl1EPqqHSGtyh+ZLZytg42V8CCp/YdAZ/aAuI76CnWSBjPcPLCYR5sgIp53GWxSvj1PasNbtW/qcdJzhBM8GWbG1CzXFE33VSUy0TBLdx51GMS7HbGExB17a1XW+0LrkNcX8daDUOIZDW0k0ShpgKUX4y6U1XvwkzGmZ3A/3J52sqgMRHkG5/ORG0E24nFxfmqHYLS5rVzOfip2rfNML+wK4PW3S77WG2sLE1GBxytta1ml+Hb50em0yrkFNeplofcN+HmNZlM2c2ABpyHiLeIy4FaJUANCdSNteY1XmF9M4HNr94MDwGV7XCYx9wjq8x80LyheJs=
