@@ -6,7 +6,11 @@ dist: xenial
 branches:
   only:
   - master
-
+before_script:
+  - npm install -g @angular/cli
+script:
+  - ng lint
+  - npm run test-headless
 notifications:
   email: false
   slack:
