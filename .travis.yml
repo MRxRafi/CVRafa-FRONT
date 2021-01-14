@@ -1,5 +1,6 @@
 os: linux
 language: node_js
+skip_cleanup: true
 node_js:
   - '14'
 dist: trusty
