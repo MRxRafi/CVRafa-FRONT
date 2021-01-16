@@ -9,7 +9,8 @@
        <div class="collapse navbar-collapse" id="navDropdown">
          <ul class="navbar-nav mr-auto">
            <ng-container *ngFor="let header of headers; let i = index">
-             <li [id]=header.routerlink [routerLink]=header.routerlink class="nav-item" (click)="changeHeader(i)">
+             <li [id]=header.routerlink [routerLink]=header.routerlink class="nav-item"
+                 data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="changeHeader(i)">
                <span [ngClass]="{ 'nav-link': true, 'active': header.active}">{{header.headerDisplay}}
                  <i *ngIf="header.icon !== undefined" [class]=header.icon></i></span></li>
            </ng-container>
