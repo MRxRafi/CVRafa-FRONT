@@ -12,7 +12,7 @@
              <li [id]=header.routerlink [routerLink]=header.routerlink class="nav-item"
                  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="changeHeader(i)">
                <span [ngClass]="{ 'nav-link': true, 'active': header.active}">{{header.headerDisplay}}
-                 <i *ngIf="header.icon !== undefined" [class]=header.icon></i></span></li>
+                 <em *ngIf="header.icon !== undefined" [class]=header.icon></em></span></li>
            </ng-container>
          </ul>
        </div>
