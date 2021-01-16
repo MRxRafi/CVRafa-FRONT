@@ -1,0 +1,16 @@
+.top-container {
+  background-color: #e4f9f5;
+  position: relative;
+  padding-top: 100px;
+}
+.bottom-cloud {
+  position: absolute;
+  left: 30%;
+  bottom: 25%;
+}
+
+.top-cloud {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+}
