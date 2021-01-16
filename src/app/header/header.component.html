@@ -1,25 +1,28 @@
- <header class="top-container">
-   <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <div class="container-fluid">
-         <a class="navbar-brand" href="#">Navbar</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-           <div class="navbar-nav">
-             <a class="nav-link active" aria-current="page" href="#">Home</a>
-             <a class="nav-link" href="#">Features</a>
-             <a class="nav-link" href="#">Pricing</a>
-             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-           </div>
-         </div>
+ <header>
+   <nav class="navbar navbar-expand-md navbar-light">
+     <div class="container-fluid">
+       <img src="../../assets/img/cv-solid.svg" width="30" height="30" class="cv-image d-inline-block align-top" alt="">
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDropdown"
+               aria-controls="navDropdown" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navDropdown">
+         <ul class="navbar-nav mr-auto">
+           <ng-container *ngFor="let header of headers; let i = index">
+             <li [id]=header.routerlink [routerLink]=header.routerlink class="nav-item" (click)="changeHeader(i)">
+               <span [ngClass]="{ 'nav-link': true, 'active': header.active}">{{header.headerDisplay}}
+                 <i *ngIf="header.icon !== undefined" [class]=header.icon></i></span></li>
+           </ng-container>
+         </ul>
        </div>
-   </nav> -->
-
-   <img class="top-cloud" src="../../assets/img/cloud.png" alt="cloud-img">
-   <img class="bottom-cloud" src="../../assets/img/cloud.png" alt="cloud-img">
-   <h1>Soy Rafa.</h1>
-   <h2>un <u>ingeniero</u> web</h2>
-   <img class="img-fluid" src="../../assets/img/mountain.png" alt="mountain-img">
+     </div>
+   </nav>
+   <div class="top-container">
+     <img class="top-cloud" src="../../assets/img/cloud.png" alt="cloud-img">
+     <img class="bottom-cloud" src="../../assets/img/cloud.png" alt="cloud-img">
+     <h1>Soy Rafa.</h1>
+     <h2>un <u>ingeniero</u> web</h2>
+     <img class="img-fluid" src="../../assets/img/mountain.png" alt="mountain-img">
+   </div>
  </header>
 

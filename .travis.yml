@@ -6,11 +6,21 @@ dist: xenial
 branches:
   only:
   - master
+addons:
+  sonarcloud:
+    organization: mrxrafi
+    token: "$SONAR"
 before_script:
   - npm install -g @angular/cli
 script:
   - ng lint
   - npm run test-headless
+  - sonar-scanner
+  - ng build --prod
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token: "$FIREBASE_TOKEN"
 notifications:
   email: false
   slack:

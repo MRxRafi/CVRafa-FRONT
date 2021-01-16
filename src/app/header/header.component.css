@@ -1,4 +1,17 @@
 
+nav {
+  background-color: #66BFBF;
+}
+
+span {
+  cursor: pointer;
+  box-decoration: none;
+}
+
+.cv-image {
+  margin: 0 2em;
+}
+
 .top-container {
     background-color: #e4f9f5;
     position: relative;
@@ -8,11 +21,11 @@
 .bottom-cloud {
     position: absolute;
     left: 30%;
-    bottom: 30%;
+    bottom: 25%;
 }
 
 .top-cloud {
     position: absolute;
-    top: 5%;
+    top: 10%;
     right: 30%;
 }

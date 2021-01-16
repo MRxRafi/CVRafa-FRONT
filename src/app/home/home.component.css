@@ -3,16 +3,14 @@
   margin-bottom: 50px;
 }
 
-.profile {
+.home-container {
   width: 50%;
   margin: 0 auto;
   line-height: 2;
 }
 
-.skill-row {
-  width: 50%;
+.trip-row {
   margin: 100px auto;
-  line-height: 2;
 }
 
 .img-rounded {
