@@ -26,10 +26,10 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/cvrafa'),
+      dir: require('path').join(__dirname, './reports/unit'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
+        { type: 'lcovonly' },
         { type: 'text-summary' }
       ]
     },
@@ -39,19 +39,9 @@ module.exports = function (config) {
       encoding: 'utf-8',          // test files encoding
       outputFolder: 'reports',    // report destination
       legacyMode: false,          // report for Sonarqube < 6.2 (disabled)
-      reportName: (metadata) => { // report name callback, but accepts also a
-        // string (file name) to generate a single file
-        /**
-         * Report metadata array:
-         * - metadata[0] = browser name
-         * - metadata[1] = browser version
-         * - metadata[2] = plataform name
-         * - metadata[3] = plataform version
-         */
-        return metadata.concat('xml').join('.');
-      }
+      reportName: 'tc-coverage.xml'
     },
-    reporters: ['progress', 'kjhtml', 'sonarqube'],
+    reporters: ['progress', 'sonarqube', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
