@@ -1,6 +1,7 @@
 # CVRafa-Front  
 
-[![Build Status](https://travis-ci.com/MRxRafi/CVRafa-FRONT.svg?branch=master)](https://travis-ci.com/MRxRafi/CVRafa-FRONT)  
+[![Build Status](https://travis-ci.com/MRxRafi/CVRafa-FRONT.svg?branch=master)](https://travis-ci.com/MRxRafi/CVRafa-FRONT)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=CVRafa.FRONT&metric=alert_status)](https://sonarcloud.io/dashboard?id=CVRafa.FRONT)  
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
