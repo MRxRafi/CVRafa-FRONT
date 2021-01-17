@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NavbarModel, headers} from './navbar.model';
+import {ERROR} from '../shared/errors.model';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,9 @@ export class HeaderComponent {
     this.headers = headers;
   }
   changeHeader(clickedHeader): void {
+    if (clickedHeader < 0 || clickedHeader >= headers.length){
+      throw new Error(ERROR.OUT_OF_BOUNDS);
+    }
     this.headers[this.lastActiveLink].active = false;
     this.headers[clickedHeader].active = true;
     this.lastActiveLink = clickedHeader;
