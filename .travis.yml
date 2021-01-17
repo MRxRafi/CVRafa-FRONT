@@ -12,6 +12,7 @@ addons:
     token: "$SONAR"
 before_script:
   - npm install -g @angular/cli
+  - npm install karma-sonarqube-reporter --save-dev
 script:
   - ng lint
   - npm run test-headless
