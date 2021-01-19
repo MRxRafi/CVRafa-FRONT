@@ -10,6 +10,9 @@ import { SkillsComponent } from './skills/skills.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LandscapeComponent } from './landscape/landscape.component';
+import { CcpatternsComponent } from './skills/ccpatterns/ccpatterns.component';
+import { FrameworksComponent } from './skills/frameworks/frameworks.component';
+import { DevopsComponent } from './skills/devops/devops.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { LandscapeComponent } from './landscape/landscape.component';
     SkillsComponent,
     ContactComponent,
     NotFoundComponent,
-    LandscapeComponent
+    LandscapeComponent,
+    CcpatternsComponent,
+    FrameworksComponent,
+    DevopsComponent
   ],
   imports: [
     BrowserModule,
