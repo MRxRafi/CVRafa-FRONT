@@ -7,8 +7,8 @@ import {MODEL, SectionModel} from './section.model';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
-  cardModels: SectionModel[];
+  cardsModel: SectionModel[];
   constructor() {
-    this.cardModels = MODEL;
+    this.cardsModel = MODEL;
   }
 }

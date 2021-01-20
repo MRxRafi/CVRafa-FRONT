@@ -6,10 +6,15 @@ export interface FrameworkModel {
   description: string;
 }
 
-enum WORK_SECTION {
-  BACK_END,
-  FRONT_END
+export enum WORK_SECTION {
+  FRONT_END,
+  BACK_END
 }
+
+export const NAME_SECTION: string[] = [
+  'Front End',
+  'Back End'
+];
 
 export const MOCK: FrameworkModel[] = [
   {

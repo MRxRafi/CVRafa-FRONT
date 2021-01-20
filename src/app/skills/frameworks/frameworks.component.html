@@ -1,1 +1,12 @@
-<p>frameworks works!</p>
+<article>
+  <div *ngFor="let section of enumSections; let i = index" class="wrapper bg-light">
+    <h2>{{nameSections[i]}}</h2>
+    <div *ngFor="let fwHability of data">
+      <ng-container *ngIf="fwHability.section === section">
+        <h3>{{fwHability.title}}</h3>
+        <p>Conocimiento: <em *ngFor="let star of getStarClasses(fwHability.score)" [class]=star></em></p>
+        <p>Años de experiencia: {{fwHability.experienceYears}}</p>
+      </ng-container>
+    </div>
+  </div>
+</article>
