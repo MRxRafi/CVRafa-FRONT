@@ -36,7 +36,8 @@ export const MOCK: FrameworkModel[] = [
     title: 'Angular',
     score: 3.5,
     experienceYears: 1.5,
-    description: 'Tecnología aprendida durante el grado y máster. Utilizado en este proyecto'
+    description: 'Tecnología aprendida durante el grado y máster. ' +
+      'Conocimientos en Data Binding, Directivas, comunicación de componentes, Pipes, Enrutamiento, Observer, Servicios... Utilizado en este proyecto'
   },
   {
     section: WORK_SECTION.FRONT_END,
@@ -48,8 +49,8 @@ export const MOCK: FrameworkModel[] = [
   {
     section: WORK_SECTION.FRONT_END,
     title: 'React',
-    score: 1,
+    score: 2,
     experienceYears: 0.5,
-    description: 'Tecnología aprendida durante un erasmus a Finlandia. Nociones básicas'
+    description: 'Tecnología aprendida durante un erasmus a Finlandia y durante las prácticas de grado. Nociones básicas'
   },
 ];

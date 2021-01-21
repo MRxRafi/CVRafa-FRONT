@@ -1,11 +1,17 @@
 <article>
+  <h2>Frameworks</h2>
   <div *ngFor="let section of enumSections; let i = index" class="wrapper bg-light">
-    <h2>{{nameSections[i]}}</h2>
-    <div *ngFor="let fwHability of data">
-      <ng-container *ngIf="fwHability.section === section">
-        <h3>{{fwHability.title}}</h3>
-        <p>Conocimiento: <em *ngFor="let star of getStarClasses(fwHability.score)" [class]=star></em></p>
-        <p>Años de experiencia: {{fwHability.experienceYears}}</p>
+    <h3>{{nameSections[i]}}</h3>
+    <div class="d-flex flex-column flex-lg-row justify-content-around align-items-lg-stretch align-items-center bg-light">
+      <ng-container *ngFor="let fwHability of data">
+        <div *ngIf="fwHability.section === section" class="card">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title">{{fwHability.title}}</h5>
+            <p>Conocimiento: <em *ngFor="let star of getStarClasses(fwHability.score)" [class]=star></em></p>
+            <p>Años de experiencia: {{fwHability.experienceYears}}</p>
+            <p class="card-text">{{fwHability.description}}</p>
+          </div>
+        </div>
       </ng-container>
     </div>
   </div>

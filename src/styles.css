@@ -43,6 +43,12 @@ hr {
   margin: 60px auto;
 }
 
+.my-container {
+  width: 50%;
+  margin: 0 auto;
+  line-height: 2;
+}
+
 .wrapper {
   margin: 50px;
   padding: 50px 0;
