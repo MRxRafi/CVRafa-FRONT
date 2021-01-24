@@ -19,7 +19,7 @@ export const STUDIES: StudyRow[] = [
     date: '2016-2020'
   },
   {
-    title: 'Máster en Ingeniería Web',
+    title: 'Máster en Ingeniería Web(*)',
     place: 'Universidad Politécnica de Madrid',
     score: 9,
     date: '2020-2021'
