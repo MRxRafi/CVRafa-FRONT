@@ -26,36 +26,26 @@
     <div class="trip-row">
       <h3>Estudios</h3>
       <p>A continuación expongo con detalle la trayectoria de mis estudios:</p>
-      <table class="table table-hover table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Título</th>
-            <th scope="col">Centro</th>
-            <th scope="col">Nota media</th>
-            <th scope="col">Duración</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Prueba</td>
-            <td>Prueba</td>
-            <td>Prueba</td>
-            <td>Prueba</td>
-          </tr>
-          <tr>
-            <td>Prueba</td>
-            <td>Prueba</td>
-            <td>Prueba</td>
-            <td>Prueba</td>
-          </tr>
-          <tr>
-            <td>Prueba</td>
-            <td>Prueba</td>
-            <td>Prueba</td>
-            <td>Prueba</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive -md">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Título</th>
+              <th scope="col">Centro</th>
+              <th scope="col">Nota media</th>
+              <th scope="col">Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let study of studies">
+              <td>{{study.title}}</td>
+              <td>{{study.place}}</td>
+              <td>{{study.score}}</td>
+              <td>{{study.date}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="trip-row">
       <h3>Prácticas externas / Beca</h3>
