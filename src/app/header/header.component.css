@@ -3,10 +3,19 @@ nav {
   background-color: #66BFBF;
 }
 
-span {
-  cursor: pointer;
+a {
+  text-decoration: none;
 }
 
 .cv-image {
   margin: 0 2em;
+}
+
+.language-image {
+  margin-bottom: 3px;
+  margin-right: 4px;
+}
+
+#language {
+  cursor: pointer;
 }

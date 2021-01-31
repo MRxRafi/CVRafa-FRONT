@@ -5,7 +5,7 @@ export interface NavbarModel {
   icon?: string;
 }
 
-export const headers: NavbarModel[] = [
+export const HEADERS: NavbarModel[] = [
   {
     routerlink: 'home',
     headerDisplay: 'Inicio',
