@@ -1,4 +1,4 @@
- <header>
+<header>
    <nav class="navbar fixed-top navbar-expand-md navbar-light">
      <div class="container-fluid">
        <img src="../../assets/img/cv-solid.svg" width="30" height="30" class="cv-image d-inline-block align-top" alt="">
@@ -20,8 +20,8 @@
            <a id="language" class="nav-item"
               data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="changeLanguage()">
              <span class="nav-link">
-               <img *ngIf="language === 'Spanish'" class="language-image" src="../../assets/img/espana.png">
-               <img *ngIf="language === 'English'" class="language-image" src="../../assets/img/reino-unido.png">
+               <img *ngIf="allTexts.type === 0" class="language-image" src="../../assets/img/espana.png">
+               <img *ngIf="allTexts.type === 1" class="language-image" src="../../assets/img/reino-unido.png">
                ES/EN</span>
            </a>
          </div>

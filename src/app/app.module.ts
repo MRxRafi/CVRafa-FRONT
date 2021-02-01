@@ -13,6 +13,7 @@ import { LandscapeComponent } from './landscape/landscape.component';
 import { CcpatternsComponent } from './skills/ccpatterns/ccpatterns.component';
 import { FrameworksComponent } from './skills/frameworks/frameworks.component';
 import { DevopsComponent } from './skills/devops/devops.component';
+import {LanguageService} from './shared/language.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { DevopsComponent } from './skills/devops/devops.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

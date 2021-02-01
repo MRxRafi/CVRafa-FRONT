@@ -1,20 +1,32 @@
-import { Component } from '@angular/core';
-import {NavbarModel, HEADERS} from './navbar.model';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {HEADERS, NavbarModel} from './navbar.model';
 import {ERROR} from '../shared/errors.model';
-import {LANGUAGES} from './languages.model';
+import {LANGUAGES} from '../shared/languages.model';
+import {LanguageService} from '../shared/language.service';
+import {Subscription} from 'rxjs';
+import {ENGLISH_TEXTS, SPANISH_TEXTS, Texts} from './allText.model';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
-  language: string;
+export class HeaderComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   headers: NavbarModel[];
+  allTexts: Texts;
   lastActiveLink = 0;
-  constructor() {
-    this.language = LANGUAGES[0];
+  constructor(private languageService: LanguageService) {
     this.headers = HEADERS;
+    this.allTexts = SPANISH_TEXTS;
+  }
+  ngOnInit(): void {
+    this.subscription = this.languageService.subscribe(
+      () => this.changeLanguageTexts()
+    );
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
   changeHeader(clickedHeader): void {
     if (clickedHeader < 0 || clickedHeader >= HEADERS.length){
@@ -25,10 +37,17 @@ export class HeaderComponent {
     this.lastActiveLink = clickedHeader;
   }
   changeLanguage(): void{
-    if (this.language === LANGUAGES[0]) {
-      this.language = LANGUAGES[1];
+    if (this.languageService.getLanguage() === LANGUAGES.SPANISH) {
+      this.languageService.next(LANGUAGES.ENGLISH);
     } else {
-      this.language = LANGUAGES[0];
+      this.languageService.next(LANGUAGES.SPANISH);
+    }
+  }
+  private changeLanguageTexts(): void { // TODO Bug: Cambia la bandera cuando se da dos veces click
+    if (this.languageService.getLanguage() === LANGUAGES.SPANISH) {
+      this.allTexts = ENGLISH_TEXTS;
+    } else {
+      this.allTexts = SPANISH_TEXTS;
     }
   }
 }
