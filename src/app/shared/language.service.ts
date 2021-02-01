@@ -12,20 +12,21 @@ export class LanguageService {
     this.language = LANGUAGES.SPANISH;
     this.languageSubject$ = new Subject();
   }
-  getLanguage(): LANGUAGES {
-    return this.language;
-  }
-  subscribe(observerCallback: () => void): Subscription {
+  subscribe(callback: (language: LANGUAGES) => void): Subscription {
     return this.languageSubject$.asObservable().subscribe(
-      () => this.notifyObservers(observerCallback),
+      (language) => this.notifyObserver(callback, language),
       (error) => alert('Error' + error)
     );
   }
-  next(observerLanguage: LANGUAGES): void {
-    this.language = observerLanguage;
-    this.languageSubject$.next(observerLanguage);
+  next(): void {
+    if (this.language === LANGUAGES.SPANISH) {
+      this.language = LANGUAGES.ENGLISH;
+    } else {
+      this.language = LANGUAGES.SPANISH;
+    }
+    this.languageSubject$.next(this.language);
   }
-  private notifyObservers(observerCallback: () => void): void {
-    observerCallback();
+  private notifyObserver(callback, language: LANGUAGES): void {
+    callback(language);
   }
 }

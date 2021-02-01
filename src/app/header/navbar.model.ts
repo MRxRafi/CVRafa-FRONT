@@ -25,3 +25,7 @@ export const HEADERS: NavbarModel[] = [
     icon: 'fas fa-phone'
   }
 ];
+
+export const SPANISH_TRANSLATIONS = ['Inicio', 'Habilidades', 'Contacto'];
+
+export const ENGLISH_TRANSLATIONS = ['Home', 'Skills', 'Contact'];
