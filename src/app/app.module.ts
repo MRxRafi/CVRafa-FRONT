@@ -14,6 +14,7 @@ import { CcpatternsComponent } from './skills/ccpatterns/ccpatterns.component';
 import { FrameworksComponent } from './skills/frameworks/frameworks.component';
 import { DevopsComponent } from './skills/devops/devops.component';
 import {LanguageService} from './shared/language.service';
+import {WithLanguageComponent} from './shared/with-language.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {LanguageService} from './shared/language.service';
     LandscapeComponent,
     CcpatternsComponent,
     FrameworksComponent,
-    DevopsComponent
+    DevopsComponent,
+    WithLanguageComponent
   ],
   imports: [
     BrowserModule,

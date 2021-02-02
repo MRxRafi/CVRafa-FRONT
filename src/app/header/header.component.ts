@@ -1,31 +1,23 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ENGLISH_TRANSLATIONS, HEADERS, NavbarModel, SPANISH_TRANSLATIONS} from './navbar.model';
 import {ERROR} from '../shared/errors.model';
 import {LANGUAGES} from '../shared/languages.model';
 import {LanguageService} from '../shared/language.service';
-import {Subscription} from 'rxjs';
+import {WithLanguageComponent} from '../shared/with-language.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
+export class HeaderComponent extends WithLanguageComponent {
   headers: NavbarModel[];
   language: LANGUAGES;
   lastActiveLink = 0;
-  constructor(private languageService: LanguageService) {
-    this.language = LANGUAGES.SPANISH;
+  constructor(protected languageService: LanguageService) {
+    super(languageService);
     this.headers = HEADERS;
-  }
-  ngOnInit(): void {
-    this.subscription = this.languageService.subscribe(
-      (language) => this.changeTextLanguage(language)
-    );
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.language = LANGUAGES.SPANISH;
   }
   changeHeader(clickedHeader): void {
     if (clickedHeader < 0 || clickedHeader >= this.headers.length){
@@ -38,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   changeLanguage(): void{
     this.languageService.next();
   }
-  private changeTextLanguage(language: LANGUAGES): void {
+  protected changeTextLanguage(language: LANGUAGES): void {
     this.language = language;
     for (let i = 0; i < this.headers.length; i++) {
       if (language === LANGUAGES.SPANISH) {

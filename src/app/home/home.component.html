@@ -1,44 +1,34 @@
-<app-landscape header="Soy Rafa" subheader="un ingeniero web"></app-landscape>
+<app-landscape [header]=texts.landscape.header [subheader]=texts.landscape.subheader></app-landscape>
 <article class="middle-container">
   <div class="my-container">
     <img class="img-rounded" src="../../assets/img/rafa.png" alt="rafa-img">
-    <h2>Hola.</h2>
-    <p>Soy un ingeniero web en proceso. Comencé a interesarme en desarrollo web full-stack
-    en un erasmus que hice en Finlandia a final de 2019, donde aprendí React.
-    Ahora, como consecuencia de haber estado allí, soy un defensor aférrimo
-    del café natural.</p>
+    <h2>{{texts.welcome.header}}</h2>
+    <p>{{texts.welcome.paragraph}}</p>
   </div>
   <hr>
   <div class="my-container">
-    <h2>Trayecto</h2>
+    <h2>{{texts.journey.header}}</h2>
     <div class="trip-row">
-      <h3>Resumen</h3>
+      <h3>{{texts.journey.summary.header}}</h3>
       <img class="img-web" src="https://media.giphy.com/media/MaI6BylfjAkDkfk4OC/giphy.gif" alt="web-design-img">
-      <p>Comencé a interesarme por la programación en general desde que era un
-        niño, prácticamente desde la ESO. Aprendí poco a poco, finalmente
-        decantándome por el Diseño y Desarrollo de Videojuegos. Ahí aprendí
-        bastante Back-End y mucha programación. En el Erasmus que hice en Finlandia
-        descubrí que hay más futuro en la industria web y que estaba mucho más
-        asentada. Le cogí el gusto y comencé por ese camino. Actualmente estoy
-        cursando un máster en Ingeniería Web, en la Universidad Politécnica de Madrid.
-      </p>
+      <p>{{texts.journey.summary.paragraph}}</p>
     </div>
     <div class="trip-row">
-      <h3>Estudios</h3>
-      <p>A continuación expongo con detalle la trayectoria de mis estudios:</p>
+      <h3>{{texts.journey.studies.header}}</h3>
+      <p>{{texts.journey.studies.paragraph}}</p>
       <div class="table-responsive -md">
         <table class="table table-hover table-bordered">
-          <caption>(*) Todavía estoy cursando este máster. La nota media es la obtenida hasta el momento.</caption>
+          <caption>{{texts.journey.studies.table.caption}}</caption>
           <thead>
             <tr>
-              <th scope="col">Título</th>
-              <th scope="col">Centro</th>
-              <th scope="col">Nota media</th>
-              <th scope="col">Duración</th>
+              <th scope="col">{{texts.journey.studies.table.headers.title}}</th>
+              <th scope="col">{{texts.journey.studies.table.headers.place}}</th>
+              <th scope="col">{{texts.journey.studies.table.headers.score}}</th>
+              <th scope="col">{{texts.journey.studies.table.headers.date}}</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let study of studies">
+            <tr *ngFor="let study of texts.journey.studies.table.rows">
               <td>{{study.title}}</td>
               <td>{{study.place}}</td>
               <td>{{study.score}}</td>
@@ -49,15 +39,10 @@
       </div>
     </div>
     <div class="trip-row">
-      <h3>Prácticas externas / Beca</h3>
+      <h3>{{texts.journey.internship.header}}</h3>
       <img class="img-pc" src="../../assets/img/pc.png" alt="pc-img">
-      <p>Las prácticas externas que tuvieron lugar al final del grado las hice en una empresa en la que
-        aprendí conceptos principales del desarrollo web. Tuve un primer contacto con el framework Angular
-        y continué desarrollando conceptos de la librería React. También estuve en contacto con la parte de
-        Back-End en Spring, sin embargo, las prácticas tuvieron que ser interrumpidas en marzo de 2020 debido
-        a la crisis del coronavirus.</p>
-      <p>Durante el transcurso del Máster en Ingeniería Web me apunté a una beca en la que tuve que trabajar
-        los fundamentos del código limpio y patrones desde octubre del 2020. Finalizo en junio de 2021.</p>
+      <p>{{texts.journey.internship.paragraphs[0]}}</p>
+      <p>{{texts.journey.internship.paragraphs[1]}}</p>
     </div>
   </div>
   <hr>
