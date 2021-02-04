@@ -26,6 +26,9 @@ export class LanguageService {
     }
     this.languageSubject$.next(this.language);
   }
+  getLanguage(): LANGUAGES {
+    return this.language;
+  }
   private notifyObserver(callback, language: LANGUAGES): void {
     callback(language);
   }

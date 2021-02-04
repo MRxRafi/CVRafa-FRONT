@@ -13,7 +13,7 @@ export class HomeComponent extends WithLanguageComponent {
   texts: HomeTranslations;
   constructor(protected languageService: LanguageService) {
     super(languageService);
-    this.texts = SPANISH_TRANSLATIONS;
+    this.changeTextLanguage(this.languageService.getLanguage());
   }
   protected changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {

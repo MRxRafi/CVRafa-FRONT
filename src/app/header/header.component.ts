@@ -17,7 +17,8 @@ export class HeaderComponent extends WithLanguageComponent {
   constructor(protected languageService: LanguageService) {
     super(languageService);
     this.headers = HEADERS;
-    this.language = LANGUAGES.SPANISH;
+    this.language = this.languageService.getLanguage();
+    this.changeTextLanguage(this.language);
   }
   changeHeader(clickedHeader): void {
     if (clickedHeader < 0 || clickedHeader >= this.headers.length){
