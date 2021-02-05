@@ -1,10 +1,15 @@
-export interface FrameworkModel {
-  section: WORK_SECTION;
+export interface Data {
   title: string;
+  section: WORK_SECTION;
   score: number;
   experienceYears: number;
-  description: string;
 }
+
+export interface FrameworkModel {
+  description: string;
+  data: Data;
+}
+
 
 export enum WORK_SECTION {
   FRONT_END,
@@ -16,41 +21,35 @@ export const NAME_SECTION: string[] = [
   'Back End'
 ];
 
-export const MOCK: FrameworkModel[] = [
+export const DATA_MOCK: Data[] = [
   {
-    section: WORK_SECTION.BACK_END,
     title: 'Spring',
-    score: 4,
-    experienceYears: 2,
-    description: 'El framework que más conozco al haberlo usado durante el grado y el máster'
-  },
-  {
     section: WORK_SECTION.BACK_END,
+    score: 4,
+    experienceYears: 2
+  },
+  {
     title: 'Symfony',
+    section: WORK_SECTION.BACK_END,
     score: 3,
-    experienceYears: 1,
-    description: 'Tecnología aprendida durante el máster. Utilizado en este proyecto'
+    experienceYears: 1
   },
   {
-    section: WORK_SECTION.FRONT_END,
     title: 'Angular',
+    section: WORK_SECTION.FRONT_END,
     score: 3.5,
-    experienceYears: 1.5,
-    description: 'Tecnología aprendida durante el grado y máster. ' +
-      'Conocimientos en Data Binding, Directivas, comunicación de componentes, Pipes, Enrutamiento, Observer, Servicios... Utilizado en este proyecto'
+    experienceYears: 1.5
   },
   {
-    section: WORK_SECTION.FRONT_END,
     title: 'Android Studio',
+    section: WORK_SECTION.FRONT_END,
     score: 2.5,
-    experienceYears: 0.5,
-    description: 'Tecnología aprendida durante el máster. Nociones de interfaces, bases de datos y conexión con la nube'
+    experienceYears: 0.5
   },
   {
-    section: WORK_SECTION.FRONT_END,
     title: 'React',
+    section: WORK_SECTION.FRONT_END,
     score: 2,
-    experienceYears: 0.5,
-    description: 'Tecnología aprendida durante un erasmus a Finlandia y durante las prácticas de grado. Nociones básicas'
-  },
+    experienceYears: 0.5
+  }
 ];

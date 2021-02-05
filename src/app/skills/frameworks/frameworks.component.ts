@@ -1,19 +1,26 @@
 import {Component} from '@angular/core';
-import {FrameworkModel, MOCK, NAME_SECTION, WORK_SECTION} from './framework.model';
+import {WithLanguageComponent} from '../../shared/with-language.component';
+import {LanguageService} from '../../shared/language.service';
+import {LANGUAGES} from '../../shared/languages.model';
+import {ENGLISH_TRANSLATIONS, FrameworksTranslation, SPANISH_TRANSLATIONS} from './translations';
 
 @Component({
   selector: 'app-frameworks',
   templateUrl: './frameworks.component.html',
   styleUrls: ['./frameworks.component.css']
 })
-export class FrameworksComponent {
-  enumSections: WORK_SECTION[];
-  nameSections: string[];
-  data: FrameworkModel[];
-  constructor() {
-    this.enumSections = [ WORK_SECTION.FRONT_END, WORK_SECTION.BACK_END ];
-    this.nameSections = NAME_SECTION;
-    this.data = MOCK;
+export class FrameworksComponent extends WithLanguageComponent {
+  texts: FrameworksTranslation;
+  constructor(protected languageService: LanguageService) {
+    super(languageService);
+    this.changeTextLanguage(this.languageService.getLanguage());
+  }
+  protected changeTextLanguage(language: LANGUAGES): void {
+    if (language === LANGUAGES.SPANISH) {
+      this.texts = SPANISH_TRANSLATIONS;
+    } else {
+      this.texts = ENGLISH_TRANSLATIONS;
+    }
   }
   getStarClasses(score: number): string[] {
     const MAX_SCORE = 5;
