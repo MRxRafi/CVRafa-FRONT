@@ -7,6 +7,13 @@ export interface SkillsTranslation {
 export const SPANISH_TRANSLATIONS: SkillsTranslation = {
   skills: [
       {
+        title: 'Metodologías de desarrollo',
+        description: 'Aquí detallo las metodologías con las que he tenido contacto y que son de especial interés.',
+        routerlink: 'methodologies',
+        img_src: IMAGE_SRC.agile,
+        img_alt: 'Imagen SCRUM'
+      },
+      {
         title: 'CleanCode y patrones',
         description: 'En esta sección están agrupadas mis habilidades respecto a los aspectos técnicos más propios de la Ingeniería del Software.',
         routerlink: 'ccpatterns',
@@ -32,6 +39,13 @@ export const SPANISH_TRANSLATIONS: SkillsTranslation = {
 
 export const ENGLISH_TRANSLATIONS: SkillsTranslation = {
   skills: [
+    {
+      title: 'Development methodologies',
+      description: 'Here I explain methodologies that I used and are interesting.',
+      routerlink: 'methodologies',
+      img_src: IMAGE_SRC.agile,
+      img_alt: 'SCRUM image'
+    },
     {
       title: 'CleanCode & patterns',
       description: 'In this section are grouped my skills regarding the technical aspects of Software Engineering.',

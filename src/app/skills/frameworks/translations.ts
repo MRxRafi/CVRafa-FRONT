@@ -1,4 +1,4 @@
-import {DATA_MOCK, FrameworkModel, NAME_SECTION, WORK_SECTION} from './framework.model';
+import {DATA_MOCK, FrameworkModel, NAME_SECTION} from './framework.model';
 
 export interface FrameworksTranslation {
   frameworks: {

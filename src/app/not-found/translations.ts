@@ -6,12 +6,12 @@ export interface NotFoundTranslation {
 
 export const SPANISH_TRANSLATIONS: NotFoundTranslation = {
   notFound: {
-    subheader: '¿Te gusta el café tanto como a mí?'
+    subheader: '¡Lo sentimos! Página no encontrada'
   }
 };
 
 export const ENGLISH_TRANSLATIONS: NotFoundTranslation = {
   notFound: {
-    subheader: 'Do you like coffee as much as I do?'
+    subheader: 'Sorry! Page not found'
   }
 };
