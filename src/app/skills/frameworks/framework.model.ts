@@ -23,22 +23,28 @@ export const NAME_SECTION: string[] = [
 
 export const DATA_MOCK: Data[] = [
   {
-    title: 'Spring',
+    title: 'Spring (Java)',
     section: WORK_SECTION.BACK_END,
     score: 4,
-    experienceYears: 2
+    experienceYears: 1.5
   },
   {
-    title: 'Symfony',
+    title: 'Symfony (PHP)',
     section: WORK_SECTION.BACK_END,
     score: 3,
-    experienceYears: 1
+    experienceYears: 0.5
+  },
+  {
+    title: 'FastAPI (Python)',
+    section: WORK_SECTION.BACK_END,
+    score: 3,
+    experienceYears: 0.5
   },
   {
     title: 'Angular',
     section: WORK_SECTION.FRONT_END,
     score: 3.5,
-    experienceYears: 1.5
+    experienceYears: 1
   },
   {
     title: 'Android Studio',
