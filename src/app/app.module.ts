@@ -15,6 +15,8 @@ import { FrameworksComponent } from './skills/frameworks/frameworks.component';
 import { DevopsComponent } from './skills/devops/devops.component';
 import {LanguageService} from './shared/language.service';
 import {WithLanguageComponent} from './shared/with-language.component';
+import { OverviewComponent } from './skills/overview/overview.component';
+import { MethodologiesComponent } from './skills/methodologies/methodologies.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {WithLanguageComponent} from './shared/with-language.component';
     CcpatternsComponent,
     FrameworksComponent,
     DevopsComponent,
-    WithLanguageComponent
+    WithLanguageComponent,
+    OverviewComponent,
+    MethodologiesComponent
   ],
   imports: [
     BrowserModule,

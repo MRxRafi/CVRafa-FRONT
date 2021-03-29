@@ -1,4 +1,4 @@
-import {DATA_MOCK, FrameworkModel, NAME_SECTION, WORK_SECTION} from './framework.model';
+import {DATA_MOCK, FrameworkModel, NAME_SECTION} from './framework.model';
 
 export interface FrameworksTranslation {
   frameworks: {
@@ -15,6 +15,24 @@ export const SPANISH_TRANSLATIONS: FrameworksTranslation = {
   frameworks: {
     sections: [
       {
+        header: NAME_SECTION[0],
+        cards: [
+          {
+            description: 'Tecnología aprendida durante el grado y máster. Conocimientos en Data Binding, Directivas, ' +
+              'comunicación de componentes, Pipes, Enrutamiento, Observer, Servicios... Utilizado en este proyecto',
+            data: DATA_MOCK[3]
+          },
+          {
+            description: 'Tecnología aprendida durante el máster. Nociones de interfaces, bases de datos y conexión con la nube',
+            data: DATA_MOCK[4]
+          },
+          {
+            description: 'Tecnología aprendida durante un erasmus a Finlandia y durante las prácticas de grado. Nociones básicas',
+            data: DATA_MOCK[5]
+          }
+        ]
+      },
+      {
         header: NAME_SECTION[1],
         cards: [
           {
@@ -25,23 +43,9 @@ export const SPANISH_TRANSLATIONS: FrameworksTranslation = {
             description: 'Tecnología aprendida durante el máster. Utilizado en este proyecto',
             data: DATA_MOCK[1]
           },
-        ]
-      },
-      {
-        header: NAME_SECTION[0],
-        cards: [
           {
-            description: 'Tecnología aprendida durante el grado y máster. Conocimientos en Data Binding, Directivas, ' +
-              'comunicación de componentes, Pipes, Enrutamiento, Observer, Servicios... Utilizado en este proyecto',
+            description: 'Framework usado en un proyecto de asignatura en el transcurso del máster',
             data: DATA_MOCK[2]
-          },
-          {
-            description: 'Tecnología aprendida durante el máster. Nociones de interfaces, bases de datos y conexión con la nube',
-            data: DATA_MOCK[3]
-          },
-          {
-            description: 'Tecnología aprendida durante un erasmus a Finlandia y durante las prácticas de grado. Nociones básicas',
-            data: DATA_MOCK[4]
           }
         ]
       }
@@ -55,6 +59,24 @@ export const ENGLISH_TRANSLATIONS: FrameworksTranslation = {
   frameworks: {
     sections: [
       {
+        header: NAME_SECTION[0],
+        cards: [
+          {
+            description: 'Technology learned during the degree and master\'s degree. Knowledge in Data Binding, ' +
+              'Directives, component communication, Pipes, Routing, Observer, Services... Used in this project',
+            data: DATA_MOCK[3]
+          },
+          {
+            description: 'Technology learned during the master\'s degree. Notions of interfaces, databases and connection to the cloud.',
+            data: DATA_MOCK[4]
+          },
+          {
+            description: 'Technology learned during an Erasmus in Finland and during undergraduate internships. Basic notions',
+            data: DATA_MOCK[5]
+          }
+        ]
+      },
+      {
         header: NAME_SECTION[1],
         cards: [
           {
@@ -65,23 +87,9 @@ export const ENGLISH_TRANSLATIONS: FrameworksTranslation = {
             description: 'Technology learned during the master\'s degree. Used in this project.',
             data: DATA_MOCK[1]
           },
-        ]
-      },
-      {
-        header: NAME_SECTION[0],
-        cards: [
           {
-            description: 'Technology learned during the degree and master\'s degree. Knowledge in Data Binding, ' +
-              'Directives, component communication, Pipes, Routing, Observer, Services... Used in this project',
+            description: 'Framework used in master\'s degree',
             data: DATA_MOCK[2]
-          },
-          {
-            description: 'Technology learned during the master\'s degree. Notions of interfaces, databases and connection to the cloud.',
-            data: DATA_MOCK[3]
-          },
-          {
-            description: 'Technology learned during an Erasmus in Finland and during undergraduate internships. Basic notions',
-            data: DATA_MOCK[4]
           }
         ]
       }

@@ -7,6 +7,7 @@ export interface SectionModel {
 }
 
 export const IMAGE_SRC = {
+  ['agile']: '../../assets/img/agil.png',
   ['uml']: '../../assets/img/uml.png',
   ['framework']: '../../assets/img/framework.jpg',
   ['devops']: '../../assets/img/devops.png'
