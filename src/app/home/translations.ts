@@ -24,12 +24,6 @@ export interface HomeTranslations {
           score: string;
           date: string;
         };
-        rows: {
-          title: string;
-          place: string;
-          score: number;
-          date: string;
-        }[]
       };
     };
     internship: {
@@ -74,26 +68,6 @@ export const SPANISH_TRANSLATIONS: HomeTranslations = {
           score: 'Nota media',
           date: 'Duración'
         },
-        rows: [
-          {
-            title: 'Bachillerato',
-            place: 'IES Cañada Real',
-            score: 6.8,
-            date: '2014-2016'
-          },
-          {
-            title: 'Grado en Diseño y Desarrollo de Videojuegos',
-            place: 'Universidad Rey Juan Carlos',
-            score: 7.85,
-            date: '2016-2020'
-          },
-          {
-            title: 'Máster en Ingeniería Web(*)',
-            place: 'Universidad Politécnica de Madrid',
-            score: 9,
-            date: '2020-2021'
-          },
-        ]
       }
     },
     internship: {
@@ -144,26 +118,6 @@ export const ENGLISH_TRANSLATIONS: HomeTranslations = {
           score: 'Average score',
           date: 'Date'
         },
-        rows: [
-          {
-            title: 'High School',
-            place: 'IES Cañada Real',
-            score: 6.8,
-            date: '2014-2016'
-          },
-          {
-            title: 'Degree in video game design and development',
-            place: 'Rey Juan Carlos University',
-            score: 7.85,
-            date: '2016-2020'
-          },
-          {
-            title: 'Web Engineering Master(*)',
-            place: 'Polytechnic University of Madrid',
-            score: 9,
-            date: '2020-2021'
-          },
-        ]
       }
     },
     internship: {

@@ -3,6 +3,10 @@ import {WithLanguageComponent} from '../shared/with-language.component';
 import {LanguageService} from '../shared/language.service';
 import {LANGUAGES} from '../shared/languages.model';
 import {ENGLISH_TRANSLATIONS, HomeTranslations, SPANISH_TRANSLATIONS} from './translations';
+import {StudyService} from './study.service';
+import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {Study} from './study.model';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +15,8 @@ import {ENGLISH_TRANSLATIONS, HomeTranslations, SPANISH_TRANSLATIONS} from './tr
 })
 export class HomeComponent extends WithLanguageComponent {
   texts: HomeTranslations;
-  constructor(protected languageService: LanguageService) {
+  studies: Observable<Study[]>;
+  constructor(protected languageService: LanguageService, private studyService: StudyService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
   }
@@ -21,5 +26,15 @@ export class HomeComponent extends WithLanguageComponent {
     } else {
       this.texts = ENGLISH_TRANSLATIONS;
     }
+    this.studies = this.searchStudies(language);
+  }
+  searchStudies(language: LANGUAGES): Observable<Study[]> {
+    return this.studyService.searchAll()
+      .pipe(
+        map(studies => studies.filter(study => {
+          if (study.language === 'ES' && language === LANGUAGES.SPANISH) { return true; }
+          if (study.language === 'EN' && language === LANGUAGES.ENGLISH) { return true; }
+        }))
+      );
   }
 }

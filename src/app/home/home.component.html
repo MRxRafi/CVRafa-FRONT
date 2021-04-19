@@ -28,8 +28,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let study of texts.journey.studies.table.rows">
-              <td>{{study.title}}</td>
+            <tr *ngFor="let study of studies | async">
+              <td>{{study.degree}}</td>
               <td>{{study.place}}</td>
               <td>{{study.score}}</td>
               <td>{{study.date}}</td>

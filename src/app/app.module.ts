@@ -17,6 +17,7 @@ import {LanguageService} from './shared/language.service';
 import {WithLanguageComponent} from './shared/with-language.component';
 import { OverviewComponent } from './skills/overview/overview.component';
 import { MethodologiesComponent } from './skills/methodologies/methodologies.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,12 @@ import { MethodologiesComponent } from './skills/methodologies/methodologies.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [LanguageService],
+  providers: [
+    LanguageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
