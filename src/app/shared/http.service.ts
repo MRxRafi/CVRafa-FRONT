@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {EMPTY, Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
@@ -11,9 +11,9 @@ export class HttpService {
   static CONNECTION_REFUSE = 0;
   static UNAUTHORIZED = 401;
 
-  private headers: HttpHeaders;
-  private params: HttpParams;
-  private responseType: string;
+  private headers!: HttpHeaders;
+  private params!: HttpParams;
+  private responseType!: string;
 
   constructor(private http: HttpClient, private router: Router) {
     this.resetOptions();
@@ -45,7 +45,7 @@ export class HttpService {
     return options;
   }
 
-  private extractData(response): any {
+  private extractData(response: any): any {
     const contentType = response.headers.get('content-type');
     if (contentType && contentType.indexOf('application/json') !== -1) {
       return response.body; // with 'text': JSON.parse(response.body);
@@ -54,7 +54,7 @@ export class HttpService {
     }
   }
 
-  private handleError(response): any {
+  private handleError(response: HttpErrorResponse): any {
     let error: Error;
     if (response.status === HttpService.UNAUTHORIZED) {
       this.router.navigate(['']).then();

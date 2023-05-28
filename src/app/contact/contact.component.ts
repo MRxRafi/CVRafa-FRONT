@@ -10,12 +10,12 @@ import {ContactTranslation, ENGLISH_TRANSLATIONS, SPANISH_TRANSLATIONS} from './
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent extends WithLanguageComponent {
-  texts: ContactTranslation;
-  constructor(protected languageService: LanguageService) {
+  texts!: ContactTranslation;
+  constructor(protected override languageService: LanguageService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;
     } else {

@@ -14,13 +14,13 @@ export class HeaderComponent extends WithLanguageComponent {
   headers: NavbarModel[];
   language: LANGUAGES;
   lastActiveLink = 0;
-  constructor(protected languageService: LanguageService) {
+  constructor(protected override languageService: LanguageService) {
     super(languageService);
     this.headers = HEADERS;
     this.language = this.languageService.getLanguage();
     this.changeTextLanguage(this.language);
   }
-  changeHeader(clickedHeader): void {
+  changeHeader(clickedHeader: number): void {
     if (clickedHeader < 0 || clickedHeader >= this.headers.length){
       throw new Error(ERROR.OUT_OF_BOUNDS);
     }
@@ -31,7 +31,7 @@ export class HeaderComponent extends WithLanguageComponent {
   changeLanguage(): void{
     this.languageService.next();
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     this.language = language;
     for (let i = 0; i < this.headers.length; i++) {
       if (language === LANGUAGES.SPANISH) {

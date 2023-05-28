@@ -6,8 +6,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./landscape.component.css']
 })
 export class LandscapeComponent implements OnInit {
-  @Input() header: string;
-  @Input() subheader: string;
+  @Input() header!: string;
+  @Input() subheader!: string;
   constructor() { }
 
   ngOnInit(): void {

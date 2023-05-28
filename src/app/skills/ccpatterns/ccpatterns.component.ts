@@ -10,12 +10,12 @@ import {LANGUAGES} from '../../shared/languages.model';
   styleUrls: ['./ccpatterns.component.css']
 })
 export class CcpatternsComponent extends WithLanguageComponent {
-  texts: CCPatternTranslation;
-  constructor(protected languageService: LanguageService) {
+  texts!: CCPatternTranslation;
+  constructor(protected override languageService: LanguageService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;
     } else {

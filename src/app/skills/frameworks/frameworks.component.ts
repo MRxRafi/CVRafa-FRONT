@@ -13,15 +13,15 @@ import {Observable} from 'rxjs';
   styleUrls: ['./frameworks.component.css']
 })
 export class FrameworksComponent extends WithLanguageComponent {
-  texts: FrameworksTranslation;
+  texts!: FrameworksTranslation;
   frameworks: Observable<Framework[]>;
-  constructor(protected languageService: LanguageService, private frameworkService: FrameworkService) {
+  constructor(protected override languageService: LanguageService, private frameworkService: FrameworkService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
     this.frameworks = this.frameworkService.searchAll();
     this.frameworks.subscribe(frameworks => console.log(frameworks));
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;
     } else {

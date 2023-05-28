@@ -5,7 +5,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({ template: '' })
 export class WithLanguageComponent implements OnInit, OnDestroy {
-  private subscription: Subscription;
+  private subscription!: Subscription;
   constructor(protected languageService: LanguageService) {
   }
 

@@ -29,7 +29,7 @@ export class LanguageService {
   getLanguage(): LANGUAGES {
     return this.language;
   }
-  private notifyObserver(callback, language: LANGUAGES): void {
+  private notifyObserver(callback: any, language: LANGUAGES): void {
     callback(language);
   }
 }

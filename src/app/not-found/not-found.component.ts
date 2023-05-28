@@ -10,12 +10,12 @@ import {ENGLISH_TRANSLATIONS, NotFoundTranslation, SPANISH_TRANSLATIONS} from '.
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent extends WithLanguageComponent  {
-  texts: NotFoundTranslation;
-  constructor(protected languageService: LanguageService) {
+  texts!: NotFoundTranslation;
+  constructor(protected override languageService: LanguageService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;
     } else {

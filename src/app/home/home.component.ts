@@ -14,13 +14,13 @@ import {Study} from './study.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent extends WithLanguageComponent {
-  texts: HomeTranslations;
-  studies: Observable<Study[]>;
-  constructor(protected languageService: LanguageService, private studyService: StudyService) {
+  texts!: HomeTranslations;
+  studies!: Observable<Study[]>;
+  constructor(protected override languageService: LanguageService, private studyService: StudyService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;
     } else {
@@ -33,7 +33,8 @@ export class HomeComponent extends WithLanguageComponent {
       .pipe(
         map(studies => studies.filter(study => {
           if (study.language === 'ES' && language === LANGUAGES.SPANISH) { return true; }
-          if (study.language === 'EN' && language === LANGUAGES.ENGLISH) { return true; }
+          else if (study.language === 'EN' && language === LANGUAGES.ENGLISH) { return true; }
+          else { return false; }
         }))
       );
   }

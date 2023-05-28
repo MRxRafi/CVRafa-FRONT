@@ -10,12 +10,12 @@ import {LANGUAGES} from '../shared/languages.model';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent extends WithLanguageComponent {
-  texts: FooterTranslation;
-  constructor(protected languageService: LanguageService) {
+  texts!: FooterTranslation;
+  constructor(protected override languageService: LanguageService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
   }
-  protected changeTextLanguage(language: LANGUAGES): void {
+  protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;
     } else {
