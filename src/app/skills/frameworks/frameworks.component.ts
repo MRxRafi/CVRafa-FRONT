@@ -1,26 +1,34 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {WithLanguageComponent} from '../../shared/with-language.component';
 import {LanguageService} from '../../shared/language.service';
 import {LANGUAGES} from '../../shared/languages.model';
 import {ENGLISH_TRANSLATIONS, FrameworksTranslation, SPANISH_TRANSLATIONS} from './translations';
 import {FrameworkService} from './framework.service';
 import {Framework} from './framework.model';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-frameworks',
   templateUrl: './frameworks.component.html',
   styleUrls: ['./frameworks.component.css']
 })
-export class FrameworksComponent extends WithLanguageComponent {
+export class FrameworksComponent extends WithLanguageComponent implements OnInit, OnDestroy {
   texts!: FrameworksTranslation;
-  frameworks: Observable<Framework[]>;
+  frameworks!: Observable<Framework[]>;
+  frameworksSubscription!: Subscription;
   constructor(protected override languageService: LanguageService, private frameworkService: FrameworkService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
-    this.frameworks = this.frameworkService.searchAll();
-    this.frameworks.subscribe(frameworks => console.log(frameworks));
+    
   }
+  override ngOnInit(): void {
+    this.frameworks = this.frameworkService.searchAll();
+    this.frameworksSubscription = this.frameworks.subscribe(frameworks => console.log(frameworks));
+  }
+  override ngOnDestroy(): void {
+    this.frameworksSubscription.unsubscribe();
+  }
+
   protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
       this.texts = SPANISH_TRANSLATIONS;

@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {WithLanguageComponent} from '../shared/with-language.component';
 import {LanguageService} from '../shared/language.service';
 import {LANGUAGES} from '../shared/languages.model';
 import {ENGLISH_TRANSLATIONS, HomeTranslations, SPANISH_TRANSLATIONS} from './translations';
 import {StudyService} from './study.service';
 import {map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {Study} from './study.model';
 
 @Component({
@@ -13,12 +13,18 @@ import {Study} from './study.model';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent extends WithLanguageComponent {
+export class HomeComponent extends WithLanguageComponent implements OnDestroy {
   texts!: HomeTranslations;
   studies!: Observable<Study[]>;
+  studiesSubscription!: Subscription;
   constructor(protected override languageService: LanguageService, private studyService: StudyService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
+  }
+  override ngOnDestroy(): void {
+    if (this.studiesSubscription !== undefined) {
+      this.studiesSubscription.unsubscribe();
+    }
   }
   protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {
