@@ -32,7 +32,7 @@ export const SPANISH_TRANSLATIONS: DevopsTranslation = {
     continuousIntegration: {
       header: 'Integración Continua',
       paragraph: 'Entre las prácticas adecuadas se encuentra participar activamente en el proyecto, haciendo aportaciones\n' +
-        '    al repositorio remoto a través de pequeñas tareas. Las herramientas como TravisCI o Jenkins hacen automático\n' +
+        '    al repositorio remoto a través de pequeñas tareas. Las herramientas como TravisCI, Jenkins o Github Actions hacen automático\n' +
         '    gran parte del trabajo. Ejecutan el flujo deseado, desde que se hace esa pequeña aportación estas herramientas\n' +
         '    son capaces de ejecutar los tests del proyecto y lanzar las herramientas que analizan el código para buscar\n' +
         '    posibles Smell Code.'
@@ -44,7 +44,7 @@ export const SPANISH_TRANSLATIONS: DevopsTranslation = {
     },
     why: {
       header: '¿Por qué he nombrado algunas de estas herramientas?',
-      paragraph: 'Exceptuando Jira, todas las demás herramientas o metodologías las he usado y en menor o mayor medida, las conozco.\n' +
+      paragraph: 'Todas las herramientas o metodologías nombradas las he usado y en menor o mayor medida, las conozco.\n' +
         '      Si necesitáis más información, ¡no dudéis en contactar!'
     }
   }
@@ -62,7 +62,7 @@ export const ENGLISH_TRANSLATIONS: DevopsTranslation = {
     continuousIntegration: {
       header: 'Continuous Integration',
       paragraph: 'Good practices include actively participating in the project, making contributions to the remote repository ' +
-        'through small tasks. Tools like TravisCI or Jenkins automatically do much of the work. They execute the desired flow, ' +
+        'through small tasks. Tools like TravisCI, Jenkins or Github Actions automatically do much of the work. They execute the desired flow, ' +
         'from the moment that small contribution is made, these tools are able to run the project tests and launch the tools that ' +
         'analyze the code to look for possible Smell Code.'
     },
@@ -73,7 +73,7 @@ export const ENGLISH_TRANSLATIONS: DevopsTranslation = {
     },
     why: {
       header: 'Why have I named some of these tools?',
-      paragraph: 'Except for Jira, all the other tools or methodologies I have used them, and to a greater or lesser extent, ' +
+      paragraph: 'I have used all the tools or methodologies named before, and to a greater or lesser extent, ' +
         'I know them. If you need more information, don\'t hesitate to contact me!'
     }
   }

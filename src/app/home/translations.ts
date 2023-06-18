@@ -30,6 +30,10 @@ export interface HomeTranslations {
       header: string;
       paragraphs: string[];
     };
+    workExperience: {
+      header: string;
+      paragraphs: string[];
+    };
   };
 }
 
@@ -40,7 +44,7 @@ export const SPANISH_TRANSLATIONS: HomeTranslations = {
   },
   welcome: {
     header: 'Hola.',
-    paragraph: 'Soy un ingeniero web en proceso. Comencé a interesarme en desarrollo web full-stack\n' +
+    paragraph: 'Soy un ingeniero web. Comencé a interesarme en desarrollo web full-stack\n' +
       '    en un erasmus que hice en Finlandia a final de 2019, donde aprendí React.\n' +
       '    Ahora, como consecuencia de haber estado allí, soy un defensor aférrimo\n' +
       '    del café natural.'
@@ -54,8 +58,8 @@ export const SPANISH_TRANSLATIONS: HomeTranslations = {
         '        decantándome por el Diseño y Desarrollo de Videojuegos. Ahí aprendí\n' +
         '        bastante Back-End y mucha programación. En el Erasmus que hice en Finlandia\n' +
         '        descubrí que hay más futuro en la industria web y que estaba mucho más\n' +
-        '        asentada. Le cogí el gusto y comencé por ese camino. Actualmente estoy\n' +
-        '        cursando un máster en Ingeniería Web, en la Universidad Politécnica de Madrid.'
+        '        asentada. Le cogí el gusto y comencé por ese camino. Posteriormente\n' +
+        '        cursé un máster en Ingeniería Web, en la Universidad Politécnica de Madrid.'
     },
     studies: {
       header: 'Estudios',
@@ -79,7 +83,17 @@ export const SPANISH_TRANSLATIONS: HomeTranslations = {
         '        Back-End en Spring, sin embargo, las prácticas tuvieron que ser interrumpidas en marzo de 2020 debido\n' +
         '        a la crisis del coronavirus.',
         'Durante el transcurso del Máster en Ingeniería Web me apunté a una beca en la que tuve que trabajar\n' +
-        '        los fundamentos del código limpio y patrones desde octubre del 2020. Finalizo en junio de 2021.'
+        '        los fundamentos del código limpio y patrones desde octubre del 2020. Finalizó en junio de 2021.'
+      ]
+    },
+    workExperience: {
+      header: 'Experiencia laboral',
+      paragraphs: [
+        'Actualmente cuento con alrededor de 2 años de experiencia laboral, principalmente en Java y BRMS.',
+        'Durante mi camino en Decide Soluciones, trabajé para una aseguradora top española, realizando\n' +
+        '        una multitud de funciones (al tratarse de una consultora pequeña, pude desempeñar cargos\n' +
+        '        que, por la naturaleza del puesto (junior developer), no habría podido desempeñar en una\n' +
+        '        empresa más consolidada). Para ampliar esta información, póngase en contacto conmigo!'
       ]
     }
   }
@@ -92,7 +106,7 @@ export const ENGLISH_TRANSLATIONS: HomeTranslations = {
   },
   welcome: {
     header: 'Hi.',
-    paragraph: 'I\'m about to be web engineer. My interest in full-stack web development started in\n' +
+    paragraph: 'I\'m a web engineer. My interest in full-stack web development started in\n' +
       '    an Erasmus done in Finland, in final of 2019 where I learnt React.\n' +
       '    Now, because of having been there, I\'m a big coffee lover.'
   },
@@ -105,7 +119,7 @@ export const ENGLISH_TRANSLATIONS: HomeTranslations = {
         '        degree in video games design and development. There I learnt\n' +
         '        a lot of Back-End and a lot of programming. During Finland Erasmus I discovered that\n' +
         '        web industry has more future and is more settled. I liked it, so I decided to start in that path.\n' +
-        '        Nowadays I am studying a Master in Web engineering in Polytechnics Madrid University.'
+        '        After that, I studied a Master in Web engineering in Polytechnics Madrid University.'
     },
     studies: {
       header: 'Studies',
@@ -129,7 +143,17 @@ export const ENGLISH_TRANSLATIONS: HomeTranslations = {
         '        in Spring framework, however, the internship had to be interrupted in March 2020 due to\n' +
         '        the coronavirus crisis.',
         'During the course of the Master in Web Engineering I signed up for a internship in which I had to work\n' +
-        '        the fundamentals of clean code and patterns since October 2020. It ends in June 2021.'
+        '        the fundamentals of clean code and patterns since October 2020. It ended in June 2021.'
+      ]
+    },
+    workExperience: {
+      header: 'Work experience',
+      paragraphs: [
+        'Nowadays I have around 2 years of working experience with Java + BRMS',
+        'During my path in Decide Soluciones, I worked on a top assurance company, doing\n' +
+        '        a lot of tasks (as it is a small consultancy, I could do tasks\n' +
+        '        that, because of the nature of the position (junior developer), I couldn\'t\n' + 
+        '        have been done in a more consolidated company). To obtain more information, contact me!'
       ]
     }
   }

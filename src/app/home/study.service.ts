@@ -12,6 +12,7 @@ export class StudyService {
 
   constructor(private httpService: HttpService) { }
 
+  // TODO En vez de searchAll, hacer búsqueda por idioma
   searchAll(): Observable<Study[]>{
     return this.httpService
       .get(EndPoints.BASE + StudyService.STUDIES);

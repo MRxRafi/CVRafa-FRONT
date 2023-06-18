@@ -36,10 +36,8 @@ export const SPANISH_TRANSLATIONS: CCPatternTranslation = {
     howIWork: {
       header: '¿Cómo trabajo?',
       paragraphs: [
-        '\'Intento\' aplicar todas las reglas de calidad del Software y evitar el código sucio e \'intento\' diseñar\n' +
-        '      en base a patrones.',
-        '¿Por qué digo \'intento\'? Simplemente porque no tengo tanta experiencia como para que no se me escapen algunas cosas\n' +
-        '      o para hacer el diseño perfecto. Es a lo que quiero llegar.',
+        'Siempre trato de aplicar todas las reglas de calidad del Software evitando el código sucio y trato de aplicar\n' +
+        '      un diseño en base a patrones, siempre que sea necesario.',
         'Si queréis conocer con detalle los conocimientos que poseo, podemos tener una entrevista técnica.'
       ]
     }
@@ -66,9 +64,7 @@ export const ENGLISH_TRANSLATIONS: CCPatternTranslation = {
     howIWork: {
       header: 'How do I work?',
       paragraphs: [
-        'I \'try\' to apply all software quality rules and avoid dirty code and \'try\' to design based on patterns.',
-        'Why do I say \'try\'? Simply because I\'m not experienced enough to not miss some things or to make the perfect design.' +
-        ' That\'s what I\'m getting at.',
+        'I try to apply all software quality rules avoiding dirty code and try to design based on patterns.',
         'If you want to know in detail the knowledge I have, we can have a technical interview.'
       ]
     }

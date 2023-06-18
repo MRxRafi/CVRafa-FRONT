@@ -5,17 +5,17 @@ import {LANGUAGES} from '../../shared/languages.model';
 import {ENGLISH_TRANSLATIONS, FrameworksTranslation, SPANISH_TRANSLATIONS} from './translations';
 import {FrameworkService} from './framework.service';
 import {Framework} from './framework.model';
-import {Observable, Subscription} from 'rxjs';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-frameworks',
   templateUrl: './frameworks.component.html',
   styleUrls: ['./frameworks.component.css']
 })
-export class FrameworksComponent extends WithLanguageComponent implements OnInit, OnDestroy {
+export class FrameworksComponent extends WithLanguageComponent implements OnInit {
   texts!: FrameworksTranslation;
   frameworks!: Observable<Framework[]>;
-  frameworksSubscription!: Subscription;
+
   constructor(protected override languageService: LanguageService, private frameworkService: FrameworkService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
@@ -23,10 +23,6 @@ export class FrameworksComponent extends WithLanguageComponent implements OnInit
   }
   override ngOnInit(): void {
     this.frameworks = this.frameworkService.searchAll();
-    this.frameworksSubscription = this.frameworks.subscribe(frameworks => console.log(frameworks));
-  }
-  override ngOnDestroy(): void {
-    this.frameworksSubscription.unsubscribe();
   }
 
   protected override changeTextLanguage(language: LANGUAGES): void {

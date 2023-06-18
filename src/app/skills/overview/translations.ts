@@ -22,7 +22,7 @@ export const SPANISH_TRANSLATIONS: SkillsTranslation = {
       },
       {
         title: 'Frameworks',
-          description: 'Aquí valoro y trato de explicar mis habilidades con cada Framework que conozco, a través de una puntuación y la explicación.',
+          description: 'Aquí valoro y trato de explicar mis habilidades con cada Framework que conozco.',
         routerlink: 'frameworks',
         img_src: IMAGE_SRC.framework,
         img_alt: 'Imagen Framework'
@@ -55,7 +55,7 @@ export const ENGLISH_TRANSLATIONS: SkillsTranslation = {
     },
     {
       title: 'Frameworks',
-      description: 'Here I value and try to explain my skills with each Framework I know, through a score and explanation.',
+      description: 'Here I value and try to explain my skills with each Framework I know.',
       routerlink: 'frameworks',
       img_src: IMAGE_SRC.framework,
       img_alt: 'Framework image'
