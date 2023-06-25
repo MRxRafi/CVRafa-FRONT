@@ -12,7 +12,7 @@ import {Observable} from 'rxjs';
   templateUrl: './frameworks.component.html',
   styleUrls: ['./frameworks.component.css']
 })
-export class FrameworksComponent extends WithLanguageComponent implements OnInit {
+export class FrameworksComponent extends WithLanguageComponent implements OnInit, OnDestroy {
   texts!: FrameworksTranslation;
   frameworks!: Observable<Framework[]>;
 
@@ -21,8 +21,15 @@ export class FrameworksComponent extends WithLanguageComponent implements OnInit
     this.changeTextLanguage(this.languageService.getLanguage());
     
   }
-  override ngOnInit(): void {
+  
+  ngOnInit(): void {
+    this.languageComponentOnInit();
+    // TODO Interceptor con timeout --> Pillar mock si se pasa de tiempo
     this.frameworks = this.frameworkService.searchAll();
+  }
+
+  ngOnDestroy(): void {
+    this.languageComponentOnDestroy();
   }
 
   protected override changeTextLanguage(language: LANGUAGES): void {
@@ -32,6 +39,7 @@ export class FrameworksComponent extends WithLanguageComponent implements OnInit
       this.texts = ENGLISH_TRANSLATIONS;
     }
   }
+  
   getStarClasses(score: number): string[] {
     const MAX_SCORE = 5;
     const CLASSES = ['icon fas fa-star', 'icon fas fa-star-half-alt', 'icon far fa-star'];

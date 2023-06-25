@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {WithLanguageComponent} from '../shared/with-language.component';
 import {LanguageService} from '../shared/language.service';
 import {LANGUAGES} from '../shared/languages.model';
@@ -9,11 +9,18 @@ import {ENGLISH_TRANSLATIONS, NotFoundTranslation, SPANISH_TRANSLATIONS} from '.
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.css']
 })
-export class NotFoundComponent extends WithLanguageComponent  {
+export class NotFoundComponent extends WithLanguageComponent implements OnInit, OnDestroy {
   texts!: NotFoundTranslation;
   constructor(protected override languageService: LanguageService) {
     super(languageService);
     this.changeTextLanguage(this.languageService.getLanguage());
+  }
+  ngOnInit(): void {
+    this.languageComponentOnInit();
+  }
+
+  ngOnDestroy(): void {
+    this.languageComponentOnDestroy();
   }
   protected override changeTextLanguage(language: LANGUAGES): void {
     if (language === LANGUAGES.SPANISH) {

@@ -13,16 +13,21 @@ import {Study} from './study.model';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent extends WithLanguageComponent implements OnInit {
+export class HomeComponent extends WithLanguageComponent implements OnInit, OnDestroy {
   texts!: HomeTranslations;
   studies!: Observable<Study[]>;
 
   constructor(protected override languageService: LanguageService, private studyService: StudyService) {
     super(languageService);
+    this.changeTextLanguage(this.languageService.getLanguage());
   }
 
-  override ngOnInit(): void {
-    this.changeTextLanguage(this.languageService.getLanguage());
+  ngOnInit(): void {
+    this.languageComponentOnInit();
+  }
+
+  ngOnDestroy(): void {
+    this.languageComponentOnDestroy();
   }
 
   protected override changeTextLanguage(language: LANGUAGES): void {
@@ -31,8 +36,11 @@ export class HomeComponent extends WithLanguageComponent implements OnInit {
     } else {
       this.texts = ENGLISH_TRANSLATIONS;
     }
+    // TODO Vaciar Studies al cambiar idioma
     this.studies = this.searchStudies(language);
   }
+  // TODO Cambiar a buscar estudios según el idioma seleccionado
+  // TODO Interceptor - timeout, pillar mock datos si se pasa del tiempo
   searchStudies(language: LANGUAGES): Observable<Study[]> {
     return this.studyService.searchAll()
       .pipe(
